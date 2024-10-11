@@ -1,7 +1,7 @@
 # Rethinking Brain Connectome Analysis: Do Aggregation-based Graph Deep Learning Models Help?
 
 
-In this work, we investigate whether Graph Deep Learning models are effective for Brain Connectome Analysis.
+In this work, we investigate whether Graph Deep Learning models are truly effective for Brain Connectome Analysis.
 
 
 From this repository, you can find the code for the baseline experiments and 
@@ -117,9 +117,17 @@ each connection (feature) and the target variable as the selection metrics. 'tte
 ### Figure 1
 The running scripts (commands) and the corresponding hyparameters to get the results shown in Fig. 1 can be found at `runscripts/figure1` and `classical_ML_baselines/runscripts`.
 
+![Figure1](Figures/Figure1.png)
+
+---
 
 ### Figure 2
 The running scripts (commands) and the corresponding hyparameters to get the results shown in Fig. 2 can be found at `runscripts/figure2`.
+
+![Figure2](Figures/Figure2.png)
+
+
+---
 
 ### Table 1
 The running scripts (commands) and the corresponding hyparameters to get the results shown in Tab. 1 can be found at `runscripts/table1`.
