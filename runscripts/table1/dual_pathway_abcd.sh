@@ -22,7 +22,6 @@ python -u -m source --multirun datasz=100p model=mixed_model\
   dataset.gnn_num_layers=1\
   model.has_nonaggr_module=True\
   model.nonaggr_type=input\
-  model.upper_tria=False\
   model.has_aggr_module=True\
   model.aggr_module=gat\
   model.aggr_combine_type=concat\
