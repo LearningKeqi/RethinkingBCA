@@ -1,0 +1,1 @@
+from .multi_models import mixed_model

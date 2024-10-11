@@ -1,0 +1,23 @@
+# seq, gnn, fbnetgen 
+name: BrainGB
+
+pooling: concat  # concat, sum, mean
+hidden_dim: 256
+n_GNN_layers: 2
+edge_emb_dim: 256
+gcn_mp_type: node_concate # weighted_sum, bin_concate, edge_weight_concate, edge_node_concate, node_concate
+bucket_sz: 0.05
+
+train: BrainGB_Train
+
+l1_reg: False
+
+sizes: [360, 100]
+
+
+tune_pooling: [concat]
+tune_hidden_dim: [256]
+tune_gcn_mp_type: [node_concate]
+
+
+

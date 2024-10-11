@@ -1,0 +1,61 @@
+name: pnc
+batch_size: 16
+test_batch_size: 16
+val_batch_size: 16
+train_set: 0.7
+val_set: 0.1
+node_feature: /local/scratch/xkan/PNC_data/514_pearson.npy
+time_seires: /local/scratch/xkan/PNC_data/514_timeseries.npy
+label: /local/scratch/xkan/PNC_data/PNC_Gender_Age.csv
+drop_last: True
+stratified: True   # if set as false, performance will be better
+task: classification
+
+measure: sex
+
+# Node Feature
+node_feature_type: connection # identity, eigenvec, connection, centrality, learnable_eigenvec, gnn_identity, gnn_eigenvec, gnn_connection
+node_feature_dim: 264
+node_feature_eigen_topk: 10   # Learnable eigenvector and gnn_eigenvect need this 
+num_bins: 100
+
+
+# learnable_time_series
+time_series_hidden_size: 256
+time_series_encoder: lstm
+timeseries_embedding_type: last  # last or mean
+timeseries_used_length: -1  # -1 means using all time points
+
+feature_orig_or_sparse: orig  # orig, sparse, binary_sparse
+
+
+# Sparse
+sparse_ratio: 1
+
+
+plot_figures: False
+
+itype: fmri
+
+
+binary_sparse: False
+only_positive_corr: False
+
+# gnn
+gnn_hidden_channels: 256
+gnn_num_layers: 2
+gnn_pool: concat
+gnn_num_heads: 2
+gin_eps: 0.0
+sage_aggr: [mean]
+
+
+tune_gnn_hidden_channels: [256]
+tune_gnn_num_layers: [2]
+tune_gnn_pool: [concat]
+tune_gnn_num_heads: [2]
+tune_gin_eps: [0.0]
+tune_sage_aggr: [mean]
+
+
+kernel_size: 7

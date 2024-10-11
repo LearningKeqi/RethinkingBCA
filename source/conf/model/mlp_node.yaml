@@ -1,0 +1,12 @@
+# seq, gnn, fbnetgen 
+name: MLP_Node
+num_mlp_layer: 2
+
+train: MLP_Train
+
+l1_reg: False
+
+sizes: [360, 100]
+
+
+

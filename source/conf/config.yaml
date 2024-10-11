@@ -1,0 +1,52 @@
+defaults:
+  - dataset: ABCD
+  - model: bnt # brainnetcnn, fbnetgen, bnt, transformer, bntmask
+  - optimizer: adam
+  - training: basic_training
+  - datasz: 100p
+  - preprocess: mixup
+
+
+repeat_time: 5
+log_path: result
+save_learnable_graph: False
+
+# wandb
+wandb_entity: XXXX
+project: bnt_cog
+
+exp_name: noname
+
+new_weight_decay: 1.0e-4
+new_l1_norm_weight: 1.0e-4
+new_alpha: 0.1
+new_l1_ratio: 0.5
+
+
+save_mlp_weight: false
+
+has_self_loop: false
+
+
+new_learning_rates: [1.0e-4, 1.0e-5]
+
+
+tune_new_learning_rates: [[1.0e-4, 1.0e-5]]
+
+
+pretrain_lower_epoch: 0
+
+combine_learning_rates: [1.0e-4, 1.0e-5]
+tune_combine_learning_rates: [[1.0e-4, 1.0e-5]]
+
+pretrain_nonaggr_coef: 1
+nonaggr_coef: 1
+aggr_coef: 1
+
+aggr_first: True
+
+log_reg: False
+
+draw_heatmap: False
+
+save_emb: False

@@ -1,0 +1,21 @@
+# seq, gnn, fbnetgen 
+name: Neurograph
+
+hidden_channels: 32
+num_layers: 3
+hidden: 64
+
+train: Neurograph_Train
+
+l1_reg: False
+
+sizes: [360, 100]
+
+has_residual: true
+has_mid_layer: true
+
+tune_num_layers: [3]
+tune_hidden_channels: [32]
+
+
+

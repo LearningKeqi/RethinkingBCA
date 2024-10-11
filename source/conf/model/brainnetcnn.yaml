@@ -1,0 +1,14 @@
+name: BrainNetCNN
+
+l1_reg: False
+
+train: Brainnetcnn_Train
+sizes: [360]
+
+dim1: 32
+dim2: 64
+dropout_rate: 0.5
+
+tune_dim1: [32]
+tune_dim2: [64]
+tune_dropout_rate: [0.5]

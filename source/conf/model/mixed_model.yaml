@@ -1,0 +1,29 @@
+name: mixed_model  # including BNT, GCN, GAT, GIN, GraphSage
+sizes: [360, 100]  # used for BNT model
+pooling: [false, true]
+orthogonal: true
+freeze_center: true
+project_assignment: true
+num_heads: 4  # used for BNT model
+hidden_size: 1024
+
+readout_strategy: OCRead # mean, max, sum, concat, max_mean, sortpooling
+
+dim_reduction: false  # used for BNT model
+ 
+only_sa_block: false
+
+l1_reg: false
+
+one_layer_fc: false
+
+
+has_nonaggr_module: false
+has_aggr_module: true
+nonaggr_type: input # mlp, input
+aggr_combine_type: concat # add, concat
+aggr_module: bnt # bnt, gin, gat, gcn, graphsage
+
+
+tune_sizes: [[360, 100]]  # used for grid-search of hyparameters
+tune_num_heads: [4]  # used for grid-search of hyparameters

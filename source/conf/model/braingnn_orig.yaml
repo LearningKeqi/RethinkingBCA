@@ -1,0 +1,31 @@
+# seq, gnn, fbnetgen 
+name: BrainGNN_orig
+
+dim1: 32
+dim2: 32
+dim3: 512   #  default 512
+dim4: 256   #  default 256
+dim5: 8
+ratio: 0.5
+lamb0 : 1 
+lamb1 : 0
+lamb2 : 0
+lamb3 : 0.1     # default 0.1
+lamb4 : 0.1     # default 0.1
+lamb5 : 0.1     # default 0.1
+k: 8
+R: 200
+
+train: BrainGNN_orig_Train
+
+l1_reg: False
+
+sizes: [360, 100]
+
+tune_dim1: [32]
+tune_dim2: [32]
+tune_lamb1: [0]
+tune_lamb2: [0]
+
+
+
