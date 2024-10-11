@@ -1,6 +1,5 @@
 .vscode
 *__pycache__*
-*.npy
 *.pt
 all_ipynb/
 wandb/
