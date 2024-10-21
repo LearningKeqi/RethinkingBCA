@@ -1,7 +1,7 @@
 # Rethinking Functional Brain Connectome Analysis: Do Aggregation-based Graph Deep Learning Models Help?
 
 
-In this work, we investigate whether Graph Deep Learning models are truly effective for Brain Connectome Analysis.
+In this work, we investigate whether Graph Deep Learning models are truly effective for Functional Brain Connectome Analysis.
 
 
 From this repository, you can find the code for the baseline experiments and 
