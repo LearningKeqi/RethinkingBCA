@@ -87,7 +87,7 @@ python -u -m source --multirun datasz=100p model=mixed_model\
 
 - **pretrain_lower_epoch**, only used for the proposed Dual-pathway model. Number of independent training epochs for the GAT pathway of the proposed Dual-pathway model.
 
-More running parameters could be referred to the `\source\conf` folders and the provided running scripts for each part of the study.
+More running parameters could be referred to the `/source/conf` folders and the provided running scripts for each part of the study.
 
 ---
 
