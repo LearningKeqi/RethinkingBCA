@@ -83,7 +83,11 @@ def load_hcp_data(cfg: DictConfig):
     labels = final_label
 
     orig_connection = final_pearson.copy()  # orig_connection record input pearson connectivity
-    
+
+    if cfg.fc_type != 'pearson':
+        orig_connection = load_other_fc(cfg)
+
+
     if cfg.dataset.measure == 'Gender':
         encoder = preprocessing.LabelEncoder()
         encoder.fit(predicted_labels["Gender"])
@@ -105,7 +109,10 @@ def load_hcp_data(cfg: DictConfig):
 
 
     # construct sparse graph
-    sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
+    if cfg.fc_type != 'pearson':
+        sparse_connection = threshold_adjacency_matrices_newfc(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio)
+    else:
+        sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
 
 
     if cfg.dataset.timeseries_used_length != -1:
