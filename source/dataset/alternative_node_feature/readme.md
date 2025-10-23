@@ -15,7 +15,7 @@ construct_node_feature_main.py
 Example command for generating alternative node features
 
 ```bash
-python -u .e/construct_node_feature_main.py --dataset ABCD --method stat --start 0 --end 7326 --output_dir ./new_node_features --overwrite --normalize --refit_norm
+python -u ./construct_node_feature_main.py --dataset ABCD --method stat --start 0 --end 7326 --output_dir ./new_node_features --overwrite --normalize --refit_norm
 ```
 
 
