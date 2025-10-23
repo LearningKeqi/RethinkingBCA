@@ -8,7 +8,7 @@ def load_other_fc(cfg):
     # transfer to upper case
     dataset_name = dataset_name.upper()
 
-    new_fcs_path = f'./alternate_fc/new_fcs/{dataset_name}/{dataset_name}_{fc_type}.npy'
+    new_fcs_path = f'rootpah/alternate_fc/new_fcs/{dataset_name}/{dataset_name}_{fc_type}.npy'
     new_fcs = np.load(new_fcs_path)
 
     # preprocess: replace any sample matrices containing NaN/Inf with identity
