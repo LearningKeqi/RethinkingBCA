@@ -52,7 +52,7 @@ def load_abide_data(cfg: DictConfig):
 
     
     # preprocess pearson matrix for different node feature
-    final_pearson = preprocess_nodefeature(cfg, orig_connection, sparse_connection.numpy(), final_timeseires, final_pearson)   # final pearson records the preprocessed node feature
+    final_pearson = preprocess_nodefeature(cfg, orig_connection, sparse_connection.numpy(), final_timeseires)   # final pearson records the preprocessed node feature
 
 
     final_timeseires, final_pearson, labels, orig_connection = [torch.from_numpy(
