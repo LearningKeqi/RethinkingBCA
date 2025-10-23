@@ -50,3 +50,5 @@ log_reg: False
 draw_heatmap: False
 
 save_emb: False
+
+fc_type: pearson  # pearson, gc, pdc, phase, frequency
