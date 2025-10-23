@@ -84,13 +84,21 @@ def load_pnc_data(cfg: DictConfig):
 
     orig_connection = final_pearson.copy()
     
+    if cfg.fc_type != 'pearson':
+        orig_connection = load_other_fc(cfg)
+
+    
     print(f'labels = {labels}')
 
 
     print(f'datasize = {labels.shape[0]}')
     
     # construct sparse graph
-    sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
+    if cfg.fc_type != 'pearson':
+        sparse_connection = threshold_adjacency_matrices_newfc(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio)
+    else:
+        sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
+
 
     # preprocess pearson matrix for different node feature
     final_pearson = preprocess_nodefeature(cfg, orig_connection, sparse_connection.numpy(), final_timeseires)   # final pearson records the preprocessed node feature
