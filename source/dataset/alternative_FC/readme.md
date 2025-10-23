@@ -15,7 +15,7 @@ construct_fc_main.py
 Example command for generating alternative node features
 
 ```bash
-python -u ./construct_fc_main.py --dataset ABIDE --method gc_fromSL             --start 0 --end 1008 --output_dir ./new_fcs
+python -u ./construct_fc_main.py --dataset ABIDE --method gc             --start 0 --end 1008 --output_dir ./new_fcs
 ```
 
 
