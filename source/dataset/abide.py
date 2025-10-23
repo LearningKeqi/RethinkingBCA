@@ -30,6 +30,12 @@ def load_abide_data(cfg: DictConfig):
     
     orig_connection = final_pearson.copy()  # orig_connection record input pearson connectivity
 
+    if cfg.fc_type != 'pearson':
+        print(f'loading new fc type: {cfg.fc_type}')
+        orig_connection = load_other_fc(cfg)
+
+
+
     final_timeseires, final_pearson, labels, orig_connection = [np.array(
         data) for data in (final_timeseires, final_pearson, labels, orig_connection)]
     
@@ -39,10 +45,15 @@ def load_abide_data(cfg: DictConfig):
     print(f'datasize = {labels.shape[0]}')
     
     # construct sparse graph
-    sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
+    if cfg.fc_type != 'pearson':
+        sparse_connection = threshold_adjacency_matrices_newfc(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio)
+    else:
+        sparse_connection = threshold_adjacency_matrices(torch.from_numpy(orig_connection), cfg.dataset.sparse_ratio, cfg.dataset.only_positive_corr)
+
     
     # preprocess pearson matrix for different node feature
-    final_pearson = preprocess_nodefeature(cfg, orig_connection, sparse_connection.numpy(), final_timeseires)   # final pearson records the preprocessed node feature
+    final_pearson = preprocess_nodefeature(cfg, orig_connection, sparse_connection.numpy(), final_timeseires, final_pearson)   # final pearson records the preprocessed node feature
+
 
     final_timeseires, final_pearson, labels, orig_connection = [torch.from_numpy(
         data).float() for data in (final_timeseires, final_pearson, labels, orig_connection)]
