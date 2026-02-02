@@ -1,9 +1,9 @@
 # Rethinking Functional Brain Connectome Analysis: Do Graph Deep Learning Models Help?
-
+Published in ***Nature Portfolio: npj Artificial Intelligence (2026)***
 
 In this work, we investigate whether Graph Deep Learning models are truly effective for Functional Brain Connectome Analysis.
 
-🌟🚗 **Read our paper**: [https://arxiv.org/abs/2501.17207](https://arxiv.org/abs/2501.17207)
+🌟🚗 **Read our paper**: [https://www.nature.com/articles/s44387-025-00067-x](https://www.nature.com/articles/s44387-025-00067-x)
 
 From this repository, you can find the code for the baseline experiments and 
 the proposed dual-pathway model, along with detailed experimental settings and 
